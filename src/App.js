@@ -8,6 +8,7 @@ import AddContact from "./components/contacts/AddContact";
 import EditContact from "./components/contacts/EditContact";
 import ProductDetail from "./components/products/ProductDetail";
 import NotFound from "./NotFound";
+import Chat from "./components/chat/Chat";
 function App() {
   return (
     <Provider store={store}>
@@ -22,6 +23,7 @@ function App() {
                             <Route exact path="/contacts/edit/:id" component={EditContact} />
                             <Route exact path="/shop" component={Products} />
                             <Route exact path="/shop/product/:id" component={ProductDetail} />
+                            <Route exact path="/chat" component={Chat} />
                             <Route component={NotFound} />
                         </Switch>
                     </div>
