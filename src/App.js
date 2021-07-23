@@ -1,5 +1,3 @@
-import './styles/App.scss';
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import Navbar from "./components/alements/Navbar";
 import Contacts from "./components/contacts/Contacts";
 import Products from "./components/products/Products";
