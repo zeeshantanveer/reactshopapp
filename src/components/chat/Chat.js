@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { ChatEngine, getOrCreateChat ,ChatList, ChatCard, NewChatForm,
     ChatFeed, ChatHeader, IceBreaker, MessageBubble, IsTyping, ConnectionBar, NewMessageForm,
     ChatSettings, ChatSettingsTop, PeopleSettings, PhotosSettings, OptionsSettings} from 'react-chat-engine';
+import Jumbotron from "../alements/Jumbotron";
 
 const Chat = () => {
 
@@ -19,16 +20,23 @@ const Chat = () => {
     }
     function renderChatForm(creds) {
         return (
-            <div>
-                <input
-                    placeholder='Username'
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <button onClick={() => createDirectChat(creds)}>
-                    Create
-                </button>
-            </div>
+            <>
+                {/*<Jumbotron page="Chatroom" icon="restaurant" />*/}
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="pt-5">
+                            <input
+                                placeholder='Username'
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                            <button onClick={() => createDirectChat(creds)}>
+                                Create
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </>
         )
     }
     return (

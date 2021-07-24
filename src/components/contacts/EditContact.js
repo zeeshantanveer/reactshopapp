@@ -4,6 +4,7 @@ import {getContact,updateContact} from "../actions/ContactActions";
 // eslint-disable-next-line no-unused-vars
 import shortid from "shortid";
 import {useHistory, useParams} from "react-router-dom";
+import Jumbotron from "../alements/Jumbotron";
 const EditContact = () => {
     let {id} = useParams();
     let history = useHistory();
@@ -34,23 +35,28 @@ const EditContact = () => {
     }
 
     return (
-        <div className="card border-0 shadow">
-            <div className="card-header">Edit a Contact</div>
-            <div className="card-body">
-                <form onSubmit={(e) => onUpdateContact(e)}>
-                    <div className='form-group py-2'>
-                        <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="form-control" placeholder="Enter your name" />
-                    </div>
-                    <div className='form-group py-2'>
-                        <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" placeholder="Enter your phone number" />
-                    </div>
-                    <div className='form-group py-2'>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className="form-control" placeholder="Enter your email" />
-                    </div>
-                    <button type="submit" className="btn btn-primary py-2">Update Contact</button>
-                </form>
+        <>
+            <Jumbotron page="Edit Contact" icon="contacts" />
+            <div className="container pt-5">
+                <div className="card border-0 shadow">
+                <div className="card-header">Edit a Contact</div>
+                <div className="card-body">
+                    <form onSubmit={(e) => onUpdateContact(e)}>
+                        <div className='form-group py-2'>
+                            <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="form-control" placeholder="Enter your name" />
+                        </div>
+                        <div className='form-group py-2'>
+                            <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" placeholder="Enter your phone number" />
+                        </div>
+                        <div className='form-group py-2'>
+                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className="form-control" placeholder="Enter your email" />
+                        </div>
+                        <button type="submit" className="btn btn-primary py-2">Update Contact</button>
+                    </form>
+                </div>
             </div>
-        </div>
+            </div>
+        </>
     );
 };
 

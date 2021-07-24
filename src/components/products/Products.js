@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import Product from "./Product";
 import axios from "axios";
 import {setProducts} from "../actions/productActions";
+import Jumbotron from "../alements/Jumbotron";
 
 const Products = () => {
     const products = useSelector((state) => state);
@@ -17,9 +18,12 @@ const Products = () => {
         fetchProducts();
     },[]);
     return (
-        <div className="ui grid container">
-            <Product />
-        </div>
+        <>
+            <Jumbotron page="Shop" icon="restaurant" />
+            <div className="ui grid container pt-5">
+                <Product />
+            </div>
+        </>
     );
 };
 

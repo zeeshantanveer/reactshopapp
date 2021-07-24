@@ -9,13 +9,15 @@ import EditContact from "./components/contacts/EditContact";
 import ProductDetail from "./components/products/ProductDetail";
 import NotFound from "./NotFound";
 import Chat from "./components/chat/Chat";
+import FoodMenu from "./components/food/FoodMenu";
+import React from "react";
 function App() {
   return (
     <Provider store={store}>
         <Router>
             <div className="App">
                 <Navbar />
-                <div className="container">
+                <div className="container-fluid">
                     <div className="py-3">
                         <Switch>
                             <Route exact path="/" component={Contacts} />
@@ -24,6 +26,7 @@ function App() {
                             <Route exact path="/shop" component={Products} />
                             <Route exact path="/shop/product/:id" component={ProductDetail} />
                             <Route exact path="/chat" component={Chat} />
+                            <Route exact path="/foodmenu" component={FoodMenu} />
                             <Route component={NotFound} />
                         </Switch>
                     </div>
