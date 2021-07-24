@@ -13,8 +13,8 @@ const Navbar = () => {
     return (
         <nav className="navbar shadow fixed-top navbar-expand-sm navbar-dark bg-primary">
             <div className="container">
-                <Link to="/" className="navbar-brand">Contact & Shop App</Link>
-                <div>
+                <Link to="/" className="navbar-brand fw-bold">Contact & Shop App</Link>
+                <div className="nav-links">
                     <Link to="/" className={splitLocation[1] === "" ? activeClasses : nonActiveClasses}>Home</Link>
                     <Link to="/contacts/add" className={splitLocation[1] === "contacts" ? activeClasses : nonActiveClasses}>Create Contact</Link>
                     <Link to="/shop" className={splitLocation[1] === "shop" ? activeClasses : nonActiveClasses}>Shop</Link>
